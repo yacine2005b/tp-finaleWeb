@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem 3rem;
+    background-image: linear-gradient(90deg, transparent 0%, transparent 10%, #EA858A 10%, #EA858A calc(10% + 3px), transparent calc(10% + 3px), transparent 100%), linear-gradient(180deg, white 10%, transparent 10%), repeating-linear-gradient(180deg, #91C1E1 0px, #91C1E1 2px, transparent 2px, transparent 38px), linear-gradient(white, white);
+    max-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+/* nav style */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+nav h1 {
+    font-size: 3rem;
+}
+
+ul {
+
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.7rem;
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+    font-weight: 500
+}
+
+li {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    color: #000000;
+    position: relative;
+}
+
+li a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.5s ease;
+}
+
+
+
+li:hover a::after {
+    transform: scaleX(1);
+}
+
+/* button style */
+.btnForm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.btnForm button {
+    padding: 7px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* button style */
+
+/* search input */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.search__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    color: #646464;
+    padding: 0.7rem 1rem;
+    border-radius: 30px;
+    width: 30em;
+    transition: all ease-in-out .5s;
+    margin-right: -2rem;
+}
+
+.search__input:hover,
+.search__input:focus {
+    box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+    outline: none;
+    background-color: #f0eeee;
+}
+
+.search__input::-webkit-input-placeholder {
+    font-weight: 100;
+    color: #ccc;
+}
+
+.search__input:focus+.search__button {
+    background-color: #f0eeee;
+}
+
+.search__button {
+    border: none;
+    background-color: #f4f2f2;
+    margin-top: .1em;
+}
+
+.search__button:hover {
+    cursor: pointer;
+}
+
+.search__icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: #b4b4b4;
+}
+
+/* search input */
+/*news page */
+section {
+    width: 40%;
+    margin: auto;
+
+}
+
+form {
+    width: 100%;
+}
+
+form textarea {
+    padding: 8px;
+    border: 2px solid black;
+    resize: none;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: transparent;
+    letter-spacing: 2px;
+}
+
+form textarea:focus {
+    outline: none;
+}
+
+.singleAffichage {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-top: none;
+}
+
+.singleAffichage h6 {
+    color: #646464;
+}
+
+.singleAffichage .affichage {
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.singleAffichage h6 {
+    color: #646464;
+}
+
+.singleAffichage .comment {
+    border-top: 2px dashed #000000;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* register page */
+.registerForm {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+
+}
+
+.registerForm h1 {
+    text-align: center;
+    display: inline-block;
+    letter-spacing: 2px;
+    border-bottom: 4px solid black;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+
+
+}
+
+.registerForm form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.registerForm form input {
+    margin: 6px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 0 12px;
+    background-color: transparent;
+    border: 3px solid black;
+}
+
+.registerForm form input:focus {
+    border: 3px solid black;
+}
+
+.registerForm form input::placeholder {
+
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.registerForm form label {
+    font-size: 1.1rem;
+    font-weight: 500;
+
+}
+
+.registerForm form button {
+    width: 120px;
+    padding: 10px 30px;
+    margin: 0 auto;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    background-color: transparent;
+    letter-spacing: 1px;
+    margin-top: 10px;
+
+}
+
+.registerForm form {
+    border: 2px solid black;
+    padding: 25px 40px;
+    border-radius: 70px 20px 70px 20px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.role {
+    display: flex;
+    align-items: center;
+}
+
+.role input[type='radio'] {
+    display: none;
+}
+
+.role label {
+    margin-left: 10px;
+    border: 2px solid black;
+    cursor: pointer;
+    padding: 2px 4px;
+}
+
+input[type="radio"]:checked+label {
+    background-color: black;
+    color: #fff;
+}
+
+
+.successMessage {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1aff7d8d;
+    padding: 14px;
+    border-radius: 10px
+}
+
+.successMessage svg {
+    width: 10px;
+    cursor: pointer;
+}
