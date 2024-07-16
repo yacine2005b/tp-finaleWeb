@@ -35,6 +35,13 @@
                 <span><b>n°comments : {{ $user->comments()->count() }} |</b></span>
                 <span><b>n°students : {{ $user->students()->count() }}</b></span>
             </div>
+            @if ($user->role == 'parent')
+                <div>
+                    <h3>Students Added :</h3>
+                    @foreach ($students as $student)
+                        <h5>{{ $student->name }}</h5>
+                    @endforeach
+                </div>
         </div>
         <div>
             <button>Save</button>

@@ -22,7 +22,8 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 2rem;
+    padding-bottom: 1.2rem;
+
 }
 
 nav h1 {
@@ -37,6 +38,8 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0.7rem;
+    width: 85%;
+    margin: auto;
 }
 
 li a {

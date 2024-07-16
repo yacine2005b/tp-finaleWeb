@@ -35,7 +35,10 @@
     <li><a href="{{ route('parents') }}">Parents</a></li>
     <li><a href="{{ route('teachers') }}">Teachers</a></li>
     @auth
-        <li><a href="{{ route('students.create') }}">Add Student</a></li>
+        @if (auth()->user()->role == 'parent')
+            <li><a href="{{ route('students.create') }}">Add Student</a></li>
+        @endif
+
         <li><a href="{{ route('profile') }}">Me</a></li>
 
     @endauth
