@@ -61,6 +61,10 @@ class User extends Authenticatable
         if($this->image){
             return url('storage/'.$this->image);
         }
-        return "images/unknownPfp.png";
+        return asset('images/unknownPfp.png');
+    }
+      public function students()
+    {
+        return $this->hasMany(Student::class, 'parent_id');
     }
 }

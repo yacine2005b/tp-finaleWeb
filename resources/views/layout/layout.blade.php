@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{asset('css/style.css') }}" rel="stylesheet">
-
+  @vite('resources/css/app.css')
 
     <title>{{config('app.name')}}</title>
 

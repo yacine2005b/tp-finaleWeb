@@ -32,7 +32,8 @@
             <textarea name="bio" placeholder="Add a Bio" id="">{{ $user->bio }}</textarea>
             <div class="info">
                 <span><b>n°affichages : {{ $user->affichages()->count() }}|</b></span>
-                <span><b>n°comments : {{ $user->comments()->count() }}</b></span>
+                <span><b>n°comments : {{ $user->comments()->count() }} |</b></span>
+                <span><b>n°students : {{ $user->students()->count() }}</b></span>
             </div>
         </div>
         <div>

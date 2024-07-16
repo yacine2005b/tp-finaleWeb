@@ -27,7 +27,7 @@ class AuthController extends Controller
             "role"=> $validate["role"],
             "password"=> Hash::make($validate["password"])
         ]);
-        return redirect()->route("dashboard")->with("success","accounted created succefully");
+        return redirect()->route("login")->with("success","accounted created succefully");
     }
 
     public function login(){

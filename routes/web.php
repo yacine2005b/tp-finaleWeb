@@ -6,6 +6,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashbordController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\newsController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,3 +49,6 @@ Route::get('/messages/from/{sender_id}', [MessageController::class, 'messagesFro
 
 route::resource('users',UserController::class)->only('show','edit','update')->middleware('auth');
 Route::get('/prorile',[UserController::class,'profile'] )->name('profile')->middleware('auth');
+
+ Route::get('students/create', [StudentController::class, 'create'])->name('students.create');
+  Route::post('students/create', [StudentController::class, 'store'])->name('students.store');

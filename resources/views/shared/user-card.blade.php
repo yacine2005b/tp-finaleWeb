@@ -1,7 +1,7 @@
 <div class="user-card">
     <div class="userTop">
         <div>
-            <img src="{{ $user->getImageURL() }}" alt="">
+            <img src="{{ Auth()->user()->getImageURL() }}" alt="">
 
             @if ($user->role == 'parent')
                 <h3><b style="color: green">{{ $user->role }}</b> {{ $user->name }}</h3>
@@ -26,7 +26,14 @@
     </div>
     <div class="info">
         <span><b>n°affichages : {{ $user->affichages()->count() }}|</b></span>
-        <span><b>n°comments : {{ $user->comments()->count() }}</b></span>
+        <span><b>n°comments : {{ $user->comments()->count() }} |</b></span>
+        <span><b>n°students : {{ $user->students()->count() }}</b></span>
+    </div>
+    <div>
+        <h3>Students Added</h3>
+        @foreach ($students as $student)
+            <h5>{{ $student->name }}</h5>
+        @endforeach
     </div>
     <div>
 

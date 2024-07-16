@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -16,7 +17,9 @@ class UserController extends Controller
     public function show(User $user)
     {
         $affichages = $user->affichages()->paginate(5);
-return view("user.show", compact("user","affichages"));
+
+    $students = $user->students;
+return view("user.show", compact("user","affichages","students"));
     }
 
     public function edit(User $user)
@@ -39,13 +42,17 @@ return view("user.show", compact("user","affichages"));
             $validated['image']=$imagePath;
         }
 
-Storage::disk('public')->delete($user->image);
+if ($user->image !== null) {
+    Storage::disk('public')->delete($user->image);
+}
         $user->update($validated);
         return redirect()->route('profile')->with('success','');
 
     }
 
+
 public function profile(){
+
     return $this->show(auth()->user());
 }
 }

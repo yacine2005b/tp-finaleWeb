@@ -71,7 +71,7 @@ $users = User::whereIn('id', $senders)->get();
                                return $message;
                            });
 
-    // Retrieve messages sent by the specified sender to the logged-in user
+
     $receivedMessages = Message::where('sender_id', $sender_id)
                                ->where('sent_to_id', Auth::id())
                                ->get()
@@ -80,13 +80,9 @@ $users = User::whereIn('id', $senders)->get();
                                    return $message;
                                });
 
-    // Merge sent and received messages into one collection
     $mergedMessages = $sentMessages->merge($receivedMessages);
-
-    // Sort the merged messages by the created_at time
     $sortedMessages = $mergedMessages->sortBy('created_at');
 
-    // Retrieve the sender and receiver users
     $sender = User::find($sender_id);
     $receiver = Auth::user();
 

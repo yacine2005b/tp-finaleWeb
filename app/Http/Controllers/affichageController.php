@@ -17,12 +17,6 @@ class affichageController extends Controller
     $validated['user_id']=auth()->id();
  Affichage::create( $validated );
 
-//           $affichage = new Affichage([
-//              'content'=>request()->get('affichage','')
-
-//         ]);
-
-//         $affichage ->save();
 return redirect()->route('news')->with('success','affichage submitted successfully.');
     }
     public function destroy(Affichage $affichage){
