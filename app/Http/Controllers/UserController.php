@@ -26,7 +26,8 @@ return view("user.show", compact("user","affichages","students"));
     {
         $affichages = $user->affichages()->paginate(5);
         $editing = true;
-        return view("user.edit", compact("user","editing","affichages"));
+        $students = $user->students;
+        return view("user.edit", compact("user","editing","affichages","students"));
     }
 
 

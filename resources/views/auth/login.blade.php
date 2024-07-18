@@ -16,6 +16,7 @@
     <div class="registerForm">
 
         <form action="{{ route('login') }}" method="post">
+            <a href="{{ route('dashboard') }}" style="font-size: 36px"> &#x2190;</a>
             @csrf
             <h1>LOGIN</h1>
             <label for="Gmail">Gmail*</label>
@@ -37,7 +38,7 @@
             <button>Submit</button>
             <p>Doesn't have an account ?<b><a style="" href="{{ route('register') }}">Register</a></b></p>
         </form>
-        <a href="{{ route('dashboard') }}">back</a>
+
     </div>
 
 

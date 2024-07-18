@@ -16,20 +16,16 @@
                         </h3>
                     @endif
                 @endif
-
-
             </div>
             <div>
-
                 @if (Auth()->user()->id === $user->id)
                     <b><a href="{{ route('users.show', $user->id) }}">show</a></b>
                 @endif
-
             </div>
         </div>
         <div class="bio">
             <h4>Bio</h4>
-            <textarea name="bio" placeholder="Add a Bio" id="">{{ $user->bio }}</textarea>
+            <textarea name="bio" placeholder="Add a Bio">{{ $user->bio }}</textarea>
             <div class="info">
                 <span><b>n°affichages : {{ $user->affichages()->count() }}|</b></span>
                 <span><b>n°comments : {{ $user->comments()->count() }} |</b></span>
@@ -38,17 +34,16 @@
             @if ($user->role == 'parent')
                 <div>
                     <h3>Students Added :</h3>
-                    @foreach ($students as $student)
+                    @foreach (auth()->user()->students as $student)
                         <h5>{{ $student->name }}</h5>
                     @endforeach
                 </div>
+            @endif
         </div>
         <div>
             <button>Save</button>
         </div>
     </form>
-
-
 </div>
 <style>
     img {
@@ -62,14 +57,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
     }
 
     .userTop:first-child {
         display: flex;
     }
-
-
 
     input {
         padding: 10px 5px;

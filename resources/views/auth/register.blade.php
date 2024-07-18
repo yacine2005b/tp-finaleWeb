@@ -16,6 +16,7 @@
     <div class="registerForm">
 
         <form action="{{ route('register') }}" method="post">
+            <a href="{{ route('dashboard') }}" style="font-size: 36px"> &#x2190;</a>
             @csrf
             <h1>Register</h1>
             <label for="username">Username*</label>

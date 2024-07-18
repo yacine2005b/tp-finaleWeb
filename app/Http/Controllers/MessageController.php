@@ -58,7 +58,7 @@ $users = User::whereIn('id', $senders)->get();
         }
         $message->save();
 
-        // Redirect back with a success message
+       
         return redirect()->route('message.index')->with('success', 'Message sent successfully!');
     }
     public function messagesFromSender($sender_id)
