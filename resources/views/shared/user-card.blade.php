@@ -43,29 +43,3 @@
 
     </div>
 </div>
-<style>
-    img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin-right: 5px;
-    }
-
-    .userTop {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-    }
-
-    .userTop:first-child {
-        display: flex;
-    }
-
-
-    input {
-        padding: 10px 5px;
-        font-weight: 600;
-        outline: none;
-    }
-</style>

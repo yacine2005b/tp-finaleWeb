@@ -6,16 +6,17 @@
         @include('shared.submit_affichage')
         <div class="allaffichages">
             @foreach ($affichages as $affichage)
-                <a href="{{ route('affichages.show', $affichage->id) }}">
-                    <div class="singleAffichage">
-                        <div class="top">
+                <div class="singleAffichage">
+                    <div class="top">
+                        <div class="userName">
                             <img src="{{ $affichage->user->getImageURL() }}" alt="">
 
                             @if ($affichage->user->role == 'parent')
                                 <a href="{{ route('users.show', $affichage->user->id) }}">
 
                                     <h4 style="color: green;text-transform :uppercase">{{ $affichage->user->role }} <b
-                                            style="color: black;text-transform:initial">{{ $affichage->user->name }}</b></h4>
+                                            style="color: black;text-transform:initial">{{ $affichage->user->name }}</b>
+                                    </h4>
                                 </a>
                             @else
                                 <a href="{{ route('users.show', $affichage->user->id) }}">
@@ -25,26 +26,26 @@
                                 </a>
                             @endif
 
-
-
                         </div>
-                        <h6>{{ $affichage->created_at }}</h6>
+
+                        @if (Auth()->user()->id == $affichage->user->id)
+                            @include('shared.deleteAffichage')
+                        @endif
 
 
-                        <p class="affichage">{{ $affichage->content }}</p>
-                        <p class="comment"><a
-                                href="{{ route('affichages.show', $affichage->id) }}">{{ $affichage->comments->count() }}comments</a>
-                        </p>
+
                     </div>
-                </a>
+                    <h6>{{ $affichage->created_at }}</h6>
+
+
+                    <p class="affichage">{{ $affichage->content }}</p>
+                    <p class="comment"><a
+                            href="{{ route('affichages.show', $affichage->id) }}">{{ $affichage->comments->count() }}comments</a>
+                    </p>
+                </div>
             @endforeach
             {{ $affichages->links() }}
         </div>
 
     </section>
 @endsection
-<style>
-    .top {
-        display: flex;
-    }
-</style>

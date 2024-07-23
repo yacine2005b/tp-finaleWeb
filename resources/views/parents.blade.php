@@ -19,34 +19,4 @@
     @guest
         <h2>You Have To Login</h2>
     @endguest
-
-    <style>
-        .Users {
-            display: flex;
-
-        }
-
-        .cardUser {
-            padding: 10px;
-            border: 2px solid black;
-            margin: 5px;
-
-        }
-
-        .cardUser h3 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .sndMessage {
-            cursor: pointer;
-            padding: 5px 27px;
-            border: 2px solid black;
-            border-radius: 8px;
-            margin: 20px;
-
-            font-weight: 600;
-
-        }
-    </style>
 @endsection

@@ -13,3 +13,14 @@
     @endif
 
 </body>
+<script>
+    let btnDelete = document.querySelector("#btnDelete")
+    let successMessage = document.querySelector(".successMessage")
+    btnDelete.addEventListener("click", () => {
+        successMessage.style.display = "none";
+    });
+</script>
+<style>
+
+
+</style>

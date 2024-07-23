@@ -19,14 +19,23 @@ class affichageController extends Controller
 
 return redirect()->route('news')->with('success','affichage submitted successfully.');
     }
-    public function destroy(Affichage $affichage){
-        if(auth()->id()==$affichage->user_id){
-abort(404);
-        }
-       $affichage->delete();
+public function destroy($id)
+{
 
-return redirect()->route('news')->with('success','affichage deleted successfully.');
+    $affichage = Affichage::findOrFail($id);
+
+    // Check if the authenticated user is authorized to delete this affichage
+    if (auth()->id() != $affichage->user_id) {
+        abort(403, 'Unauthorized action.');
+    }
+
+    // Delete the affichage
+    $affichage->delete();
+
+
+    return redirect()->route('news')->with('success', 'Affichage deleted successfully.');
 }
+
 public function show(Affichage $affichage){
 
     return view('affichage.show',['affichage'=>$affichage]);

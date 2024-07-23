@@ -63,6 +63,7 @@ $users = User::whereIn('id', $senders)->get();
     }
     public function messagesFromSender($sender_id)
     {
+        
         $sentMessages = Message::where('sender_id', Auth::id())
                            ->where('sent_to_id', $sender_id)
                            ->get()

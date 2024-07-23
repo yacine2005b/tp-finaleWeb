@@ -1,18 +1,5 @@
-<body>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <nav>
-        <h1 class="logo">BACHRI MIDDLE SCHOOL</h1>
-        <div class="btnForm">
-            <button>
-                <h3><a href="{{ route('login') }}">login</a></h3>
-            </button>
-            <button>
-                <h3><a href="{{ route('register') }}">register</a></h3>
-            </button>
-        </div>
-
-    </nav>
-
+@extends('layout.layout')
+@section('content')
     <div class="registerForm">
 
         <form action="{{ route('login') }}" method="post">
@@ -40,6 +27,4 @@
         </form>
 
     </div>
-
-
-</body>
+@endsection
