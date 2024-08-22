@@ -93,7 +93,7 @@
         width: 20px;
     }
 
-    button {
+    .btnSnd button {
         padding: 5px 40px;
         border-radius: 10px;
         margin: 10px;
