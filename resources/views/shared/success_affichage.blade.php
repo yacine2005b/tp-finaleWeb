@@ -14,10 +14,17 @@
 
 </body>
 <script>
-    let btnDelete = document.querySelector("#btnDelete")
-    let successMessage = document.querySelector(".successMessage")
-    btnDelete.addEventListener("click", () => {
-        successMessage.style.display = "none";
+    document.addEventListener('DOMContentLoaded', () => {
+        let btnDelete = document.querySelector("#btnDelete");
+        let successMessage = document.querySelector(".successMessage");
+
+        if (btnDelete && successMessage) {
+            btnDelete.addEventListener("click", () => {
+                successMessage.style.display = "none";
+            });
+        } else {
+            console.log("Button or success message element not found.");
+        }
     });
 </script>
 <style>

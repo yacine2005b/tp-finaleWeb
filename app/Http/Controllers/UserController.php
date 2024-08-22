@@ -51,6 +51,19 @@ if ($user->image !== null) {
 
     }
 
+public function search(Request $request)
+{
+    $query = $request->input('query');
+    $users = User::where('name', 'like', "%$query%")
+                ->orWhere('role', 'like', "%$query%")
+                ->get();
+
+    // Store the results in the session
+   $request->session()->put('search_results', $users);
+
+    // Redirect back to the previous page with a success message or query
+    return redirect()->back()->with('search_results', $users);
+}
 
 public function profile(){
 

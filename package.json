@@ -1,10 +1,23 @@
 {
     "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "watch": "mix watch"
+    },
     "devDependencies": {
         "autoprefixer": "^10.4.19",
         "axios": "^1.1.2",
         "lodash": "^4.17.19",
-        "postcss": "^8.4.38",
-        "tailwindcss": "^3.4.4"
+        "postcss": "^8.4.40",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.77.8",
+        "sass-loader": "^12.1.0",
+        "tailwindcss": "^3.4.7"
+    },
+    "dependencies": {
+        "laravel-mix": "^6.0.49"
     }
 }

@@ -27,11 +27,13 @@
                             @endif
 
                         </div>
+                        @auth
 
-                        @if (Auth()->user()->id == $affichage->user->id)
-                            @include('shared.deleteAffichage')
-                        @endif
+                            @if (Auth()->user()->id == $affichage->user->id)
+                                @include('shared.deleteAffichage')
+                            @endif
 
+                        @endauth
 
 
                     </div>

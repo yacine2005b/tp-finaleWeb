@@ -6,7 +6,11 @@
 
 body {
     padding: 1rem 3rem;
-    background-image: linear-gradient(90deg, transparent 0%, transparent 10%, #EA858A 10%, #EA858A calc(10% + 3px), transparent calc(10% + 3px), transparent 100%), linear-gradient(180deg, white 10%, transparent 10%), repeating-linear-gradient(180deg, #91C1E1 0px, #91C1E1 2px, transparent 2px, transparent 38px), linear-gradient(white, white);
+    background-image: linear-gradient(90deg, transparent 0%, transparent 10%, #EA858A 10%, #EA858A calc(10% + 3px), transparent calc(10% + 3px), transparent 100%),
+        linear-gradient(180deg, white 10%, transparent 10%),
+        repeating-linear-gradient(180deg, #91C1E1 0px, #91C1E1 2px, transparent 2px, transparent 38px),
+        linear-gradient(white, white);
+
     max-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
@@ -36,16 +40,20 @@ ul {
     flex-direction: row;
     list-style: none;
     justify-content: space-between;
-    align-items: center;
     padding-bottom: 0.7rem;
     width: 85%;
     margin: auto;
+
+}
+
+ul li:not(:first-child) {
+    height: fit-content;
 }
 
 li a {
     text-decoration: none;
     color: black;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500
 }
 
@@ -58,7 +66,7 @@ li {
     position: relative;
 }
 
-li a::after {
+li:not(:first-child) a::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -77,6 +85,8 @@ li:hover a::after {
     transform: scaleX(1);
 }
 
+
+
 /* button style */
 .btnForm {
     display: flex;
@@ -94,7 +104,40 @@ li:hover a::after {
 }
 
 /* button style */
+/* search input */
+.input-container {
+    width: 440px;
+    position: relative;
+}
 
+.icon {
+    position: absolute;
+    right: 10px;
+    height: 100%;
+    top: calc(50% + 5px);
+    transform: translateY(calc(-50% - 5px));
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+    border-left: 2px solid black;
+}
+
+
+.input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    transition: .2s linear;
+    border: 2.5px solid black;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.input:focus {
+    outline: none;
+
+}
 
 /*news page */
 section {
@@ -145,7 +188,7 @@ form textarea:focus {
 
 .top {
     display: flex;
-    justify-content: space-between;
+
 }
 
 .singleAffichage .comment {
@@ -335,10 +378,9 @@ input[type="radio"]:checked+label {
 
 .sndMessage {
     cursor: pointer;
-    padding: 4px 27px;
+    padding: 0 10px;
     border: 2px solid black;
     border-radius: 4px;
-    margin: 20px;
 }
 
 /* profile page */

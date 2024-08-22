@@ -18,7 +18,7 @@
         @endif
     </div>
     <div style="text-align: center; margin-top:10px">
-        <a href="{{ route('message.create') }}"><button>Send a Message</button></a>
+        <a href="{{ route('message.create') }}"><button class="a">Send a Message</button></a>
     </div>
 @endsection
 
@@ -48,7 +48,7 @@
         border: none;
     }
 
-    button {
+    .a {
         border: 2px solid black;
         padding: 10px 5px;
         border-radius: 20px;

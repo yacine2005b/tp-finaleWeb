@@ -6,6 +6,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashbordController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\newsController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use GuzzleHttp\Middleware;
@@ -44,15 +45,25 @@ Route::get('/messages', [MessageController::class, 'index'])->name('message.inde
 Route::get('/messages/create/{recipient_id?}/{recipient_name?}', [MessageController::class, 'create'])->name('message.create');
 Route::get('/messages/create', [MessageController::class, 'create'])->name('message.create');
 
+route::group(['middleware'=>['auth']],function(){
+Route::get('/messages', [MessageController::class, 'index'])->name('message.index');
+Route::get('/messages/create/{recipient_id?}/{recipient_name?}', [MessageController::class, 'create'])->name('message.create');
+Route::get('/messages/create', [MessageController::class, 'create'])->name('message.create');
+});
+
 Route::post('/messages', [MessageController::class, 'store'])->name('message.store');
 Route::get('/messages/from/{sender_id}', [MessageController::class, 'messagesFromSender'])->name('messages.from');
 
 
 route::resource('users',UserController::class)->only('show','edit','update')->middleware('auth');
 Route::get('/prorile',[UserController::class,'profile'] )->name('profile')->middleware('auth');
+Route::get('/user/search', [UserController::class, 'search'])->name('users.search');
 
 
 route::group(['middleware'=>['parent']],function(){
      Route::get('students/create', [StudentController::class, 'create'])->name('students.create');
   Route::post('students/create', [StudentController::class, 'store'])->name('students.store');
 });
+
+
+Route::post('/remove-session-variable', [SessionController::class, 'removeSessionVariable']);

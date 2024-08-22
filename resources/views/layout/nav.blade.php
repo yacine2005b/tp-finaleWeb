@@ -30,10 +30,10 @@
 
 
     {{-- search input --}}
+    <li class="searchBar">@include('shared.search')</li>
     <li><a href="/">Home</a></li>
     <li><a href="/news">News</a></li>
-    <li><a href="{{ route('parents') }}">Parents</a></li>
-    <li><a href="{{ route('teachers') }}">Teachers</a></li>
+
     @auth
         @if (auth()->user()->role == 'parent')
             <li><a href="{{ route('students.create') }}">Add Student</a></li>
@@ -43,7 +43,9 @@
 
     @endauth
 </ul>
+<footer>
 
+</footer>
 <style>
     a {
         color: black;

@@ -8,7 +8,7 @@
 
             <div class="singleAffichage">
 
-                <div class="top">
+                <div class="Top">
                     <div>
                         <img src="{{ $affichage->user->getImageURL() }}" alt="">
                     </div>
@@ -66,8 +66,9 @@
         padding-bottom: 6px;
     }
 
-    .top {
-        display: flex;
+
+    .Top {
+        display: flex
     }
 
     img {
